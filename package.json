@@ -21,14 +21,11 @@
     "sass:build": "sass src/main.scss main.css",
     "sass:watch": "sass --watch src/main.scss main.css",
      "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-     "c-test": "cypress run",
-     "c-testUI": "cypress open"
   },
 
   "devDependencies": {
     "jest": "^29.7.0",
     "sass": "^1.94.2",
-    "cypress": "^15.11.0"
   }
   
 }
