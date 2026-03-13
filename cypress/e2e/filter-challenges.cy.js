@@ -1,6 +1,6 @@
 //test som letar efter specifikt webbelement i filter av Challenges på webbsidan.
 
-describe('Filter tab in challenges', () => {
+describe('Filter tab exists in challenges', () => {
     it('Should find filter tab', () => {
         cy.visit('/all.html') //challenges page
 

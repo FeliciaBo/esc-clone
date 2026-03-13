@@ -157,10 +157,12 @@ ratingStarsMax.forEach((star, index) => {
             star.classList.toggle("checked", index >= threshold);
         });
 
-        tagElement.forEach(tag => {
-            const value = tag.textContent.trim().toLowerCase();
-            tag.classList.toggle("checked", filterState.tags.includes(value));
-        });
+        const tagElements = document.querySelectorAll(".tag");
+
+       tagElements.forEach(tag => {
+       const value = tag.textContent.trim().toLowerCase();
+       tag.classList.toggle("checked", filterState.tags.includes(value));
+});
 
         filterUserInput.value = filterState.search;
 
