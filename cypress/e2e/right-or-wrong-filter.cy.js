@@ -13,18 +13,13 @@ describe('Test filtered function and get results', () => {
         cy.get('.filter__user-input').type('a') //text that should return result
 
         
-    cy.get('body').should(($body) => {
-
-  const challengeCards = $body.find('.challenge__imageWrapper:visible') //check for visible challange cards
-
-
-  expect(challengeCards.length > 0 ) 
+    cy.get('.challenge__imageWrapper')
+      .should('have.length.greaterThan', 0)
 
 })
 
     })
 
-  })
 
 
 describe('Test filtered function and get error message', () => {
@@ -37,16 +32,11 @@ describe('Test filtered function and get error message', () => {
 
         cy.get('.filter__user-input').type('aptsrghs') //text that should not return result
 
-        
-    cy.get('body').should(($body) => {
-
-  const error = $body.text().includes('No matching challenges')
-
-  expect(error).to.be.true
+        cy.contains('No matching challenges').should('be.visible')
 
 })
 
     })
 
-  })
+
 

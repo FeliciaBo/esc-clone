@@ -7,6 +7,10 @@ describe ('Navigation test', () => {
         cy.visit('/')
          cy.get('.hero__buttons__onsite').first().click() //clicks first element with class name
 
+          cy.url().should('include', 'all')
+
         cy.get('.challenge__bookbutton').eq(1).click() //clicks second element with class name
+
+
     })
 })
