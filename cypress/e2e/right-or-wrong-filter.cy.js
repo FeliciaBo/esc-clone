@@ -10,7 +10,7 @@ describe('Test filtered function and get results', () => {
 
         cy.get('.filterBtn').click() //clicks filter button to open menu
 
-        cy.get('.filter__user-input').type('a')
+        cy.get('.filter__user-input').type('a') //text that should return result
 
         
     cy.get('body').should(($body) => {
@@ -27,4 +27,26 @@ describe('Test filtered function and get results', () => {
   })
 
 
+describe('Test filtered function and get error message', () => {
+
+  it('Should show error message', () => {
+
+    cy.visit('/all.html') //challenges page
+
+        cy.get('.filterBtn').click() //clicks filter button to open menu
+
+        cy.get('.filter__user-input').type('aptsrghs') //text that should not return result
+
+        
+    cy.get('body').should(($body) => {
+
+  const error = $body.text().includes('No matching challenges')
+
+  expect(error).to.be.true
+
+})
+
+    })
+
+  })
 
