@@ -10,12 +10,12 @@ describe('Test filtered function and get results', () => {
 
         cy.get('.filterBtn').click() //clicks filter button to open menu
 
-        cy.get('#onsite').click()
+        cy.get('.filter__user-input').type('a')
 
         
     cy.get('body').should(($body) => {
 
-  const challengeCards = $body.find('.challenge__imageWrapper:visible') //kolla att challenge-kort finns och syns
+  const challengeCards = $body.find('.challenge__imageWrapper:visible') //check for visible challange cards
 
 
   expect(challengeCards.length > 0 ) 
